@@ -1,0 +1,347 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #ffffff;
+
+
+}
+
+main {
+    flex: 1 0 auto;
+  }
+
+.materialboxed{
+  display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+}
+div{
+  display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+
+}
+p{
+  padding: 0px;
+  margin: 3px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.pacman{
+	width: 0;
+	height: 0;
+	border-right: 60px solid transparent;
+	border-top: 60px solid yellow;
+	border-left: 60px solid yellow;
+	border-bottom: 60px solid yellow;
+	border-top-left-radius: 60px;
+	border-top-right-radius: 60px;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 60px;
+	position:absolute;
+	animation: pacman 1.5s infinite;
+}
+
+@keyframes pacman{
+	0%{border-top: 60px solid yellow ;border-left: 60px solid yellow; border-right: 60px solid transparent; border-bottom: 60px solid yellow;left: 0px; top: 0px;}
+	25%{border-top: 60px solid yellow ;border-left: 60px solid yellow; border-right: 60px solid yellow; border-bottom: 60px solid yellow;left: 150px; top: 0px;}
+	50%{border-top: 60px solid yellow ;border-left: text-transform: uppercase;60px solid yellow; border-right: 60px solid transparent; border-bottom: 60px solid yellow;left: 0px; top: 0px;}
+	75%{border-top: 60px solid yellow ;border-left: 60px solid yellow; border-right: 60px solid yellow; border-bottom: 60px solid yellow;left: 150px; top: 0px;}
+	100%{border-top: 60px solid yellow ;border-left: 60px solid yellow; border-right: 60px solid transparent; border-bottom: 60px solid yellow;left: 0px; top: 0px;}
+}
+
+.titverde{
+  padding: 0px
+  margin: 2px;
+  color: rgb(53, 190, 160);
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 0.01;
+  letter-spacing: -2px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.titnaranja{
+  padding: 0px;
+  margin: 2px;
+  color: rgb(237, 211, 103);
+  text-align: left;
+  text-transform: uppercase;
+
+  letter-spacing: -2px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.lapsogris{
+    padding: 0px;
+    margin: 2px;
+    color: rgb(181, 179, 179);
+    text-align: left;
+
+    white-space: normal;
+}
+/* Style all font awesome icons */
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 1px;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+/* Facebook
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}*/
+@import url(https://fonts.googleapis.com/css?family=Expletus+Sans);
+
+
+/* Styling an indeterminate progress bar */
+
+progress:not(value) {
+    /* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
+}
+
+/* Styling the determinate progress element */
+
+progress[value] {
+    /* Get rid of the default appearance */
+    appearance: none;
+
+    /* This unfortunately leaves a trail of border behind in Firefox and Opera. We can remove that by setting the border to none. */
+    border: none;
+
+    /* Add dimensions */
+    width: 100%; height: 20px;
+
+    /* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
+      background-color: whiteSmoke;
+      border-radius: 3px;
+      box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+
+    /* Of all IE, only IE10 supports progress element that too partially. It only allows to change the background-color of the progress value using the 'color' attribute. */
+    color: rgb(18, 161, 143);
+
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+/*
+Webkit browsers provide two pseudo classes that can be use to style HTML5 progress element.
+-webkit-progress-bar -> To style the progress element container
+-webkit-progress-value -> To style the progress element value.
+*/
+
+progress[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+
+    /* Let's animate this */
+    animation: animate-stripes 5s linear infinite;
+}
+
+@keyframes animate-stripes { 100% { background-position: -100px 0; } }
+
+/* Let's spice up things little bit by using pseudo elements. */
+
+progress[value]::-webkit-progress-value:after {
+    /* Only webkit/blink browsers understand pseudo elements on pseudo classes. A rare phenomenon! */
+    content: '';
+    position: absolute;
+
+    width:5px; height:5px;
+    top:7px; right:7px;
+
+    background-color: white;
+    border-radius: 100%;
+}
+
+/* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
+
+progress[value]::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #18a48e, #dd992b);
+/*   #18a48e, #dd992b  */
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+
+    /* Firefox doesn't support CSS3 keyframe animations on progress element. Hence, we did not include animate-stripes in this code block */
+}
+
+/* Fallback technique styles */
+.progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+
+    /* Dimensions should be similar to the parent progress element. */
+    width: 100%; height:20px;
+}
+
+.progress-bar span {
+    background-color: royalblue;
+    border-radius: 3px;
+
+    display: block;
+    text-indent: -9999px;
+}
+
+p[data-value] {
+
+  position: relative;
+}
+
+/* The percentage will automatically fall in place as soon as we make the width fluid. Now making widths fluid. */
+
+p[data-value]:after {
+    content: attr(data-value) '%';
+    position: absolute; right:0;
+}
+
+
+
+
+
+.html5::-webkit-progress-value,
+.python::-webkit-progress-value  {
+    /* Gradient background with Stripes */
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -webkit-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #18a48e, #dd992b);
+}
+
+.css3::-webkit-progress-value,
+.php::-webkit-progress-value
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -webkit-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #18a48e, #ff0);
+}
+
+.jquery::-webkit-progress-value,
+.node-js::-webkit-progress-value
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -webkit-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #18a48e, #690);
+}
+
+/* Similarly, for Mozillaa. Unfortunately combining the styles for different browsers will break every other browser. Hence, we need a separate block. */
+
+.html5::-moz-progress-bar,
+.php::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #18a48e, #dd992b);
+}
+
+.css3::-moz-progress-bar,
+.php::-moz-progress-bar {
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #18a48e, #ff0);
+}
+
+.jquery::-moz-progress-bar,
+.node-js::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #18a48e, #690);
+}
+
+/* Now we are good to duplicate html code for other skills and then add the css code for the new skill based on data-skill */
+
+
+/* THE END */
