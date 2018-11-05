@@ -1,5 +1,5 @@
 <a href="https://rotcehodraude.github.io/Proyecto-1-Web/">
-  <h1> CLICK!! </h1>
+  clic
 </a>
 <p align="center">
   <a href="http://materializecss.com/">
